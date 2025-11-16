@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-image: url("background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+#content {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+#content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.shark,
+.turtle,
+.diver1,
+.diver2,
+.fish {
+  position: absolute;
+  left: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.shark {
+  top: 50%;
+  animation-name: shark;
+  animation-duration: 15s;
+}
+.turtle {
+  top: 300px;
+  animation-name: turtle;
+  animation-duration: 5s;
+}
+.diver1 {
+  bottom: 10%;
+  animation-name: diver1;
+  animation-duration: 19s;
+}
+.diver2 {
+  bottom: 70%;
+  animation-name: diver2;
+  animation-duration: 24s;
+}
+.fish {
+  top: 40%;
+  animation-name: fish;
+  animation-duration: 18s;
+}
+.water,
+.water1,
+.water2 {
+  position: absolute;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  will-change: transform, opacity;
+  z-index: 2;
+}
+.water {
+  left: 300px;
+  top: 500px;
+  width: 80px;
+  height: 136px;
+  animation-name: water;
+  animation-duration: 5s;
+}
+.water1 {
+  right: 20%;
+  top: 300px;
+  width: 90px;
+  height: 200px;
+  animation-name: water1;
+  animation-duration: 7s;
+}
+.water2 {
+  right: 20%;
+  top: 300px;
+  width: 90px;
+  height: 200px;
+  animation-name: water2;
+  animation-duration: 8s;
+}
+@keyframes shark {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(calc(100vw - 250px)) scaleX(1);
+  }
+  50.1% {
+    transform: translateX(calc(100vw - 250px)) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1);
+  }
+}
+@keyframes fish {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  45% {
+    transform: translateX(calc(100vw - 250px)) scaleX(1);
+  }
+  45.1% {
+    transform: translateX(calc(100vw - 250px)) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1);
+  }
+}
+@keyframes diver1 {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(calc(100vw - 300px)) scaleX(1);
+  }
+  50.1% {
+    transform: translateX(calc(100vw - 300px)) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1);
+  }
+}
+@keyframes diver2 {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(calc(100vw - 300px)) scaleX(1);
+  }
+  50.1% {
+    transform: translateX(calc(100vw - 300px)) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1);
+  }
+}
+@keyframes turtle {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(500px) scaleX(1);
+  }
+  55% {
+    transform: translateX(500px) scaleX(-1);
+  }
+  70% {
+    transform: translateX(400px) scaleX(-1);
+  }
+  85% {
+    transform: translateX(200px) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(-1);
+  }
+}
+@keyframes water {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
+@keyframes water1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+}
+@keyframes water2 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-900px);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shark,
+  .turtle,
+  .diver1,
+  .diver2,
+  .fish,
+  .water,
+  .water1,
+  .water2 {
+    animation: none !important;
+  }
+}
